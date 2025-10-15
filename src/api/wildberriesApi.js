@@ -1,5 +1,6 @@
 
-const API_KEY = import.meta.env.VITE_API_KEY || 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie';
+const API_BASE_URL = 'http://109.73.206.144:6969';
+const API_KEY = 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie';
 
 async function apiRequest(endpoint, params = {}) {
   const queryParams = new URLSearchParams({
@@ -7,8 +8,10 @@ async function apiRequest(endpoint, params = {}) {
     key: API_KEY
   });
 
-  // Используйте относительный путь для работы с прокси!
-  const response = await fetch(`/api${endpoint}?${queryParams}`);
+  const url = `${API_BASE_URL}${endpoint}?${queryParams}`;
+  console.log('📡 API Request:', url);
+
+  const response = await fetch(url);
   return response.json();
 }
 
