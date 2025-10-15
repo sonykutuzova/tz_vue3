@@ -1,5 +1,5 @@
 
-const API_BASE_URL = 'http://109.73.206.144:6969';
+const API_BASE_URL = 'https://109.73.206.144:6969';
 const API_KEY = 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie';
 
 async function apiRequest(endpoint, params = {}) {
